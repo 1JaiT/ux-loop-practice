@@ -23,6 +23,7 @@
 */
 
 
+
 let arr = [];
 arr[2] = "c";
 arr[0] = "a";
@@ -52,7 +53,11 @@ for (let a of arr) {
 */
 
 function addExerciseToRoutine(routine, exercise, numRepetitions) {
-    // Your Code Here!
+    let index = 0;
+    while (index < numRepetitions){
+        routine.push (exercise);
+        index ++;
+    }
 }
 
 /* 
@@ -103,7 +108,12 @@ function doAction(action) {
 */
 
 function performRoutine(routine) {
-    // Your Code Here!
+    let index = 0;
+    while (index < routine.length){
+        let excersie = routine [index];
+        doAction(excersie);
+        index ++;
+    }
 }
 
 /* 
@@ -143,8 +153,14 @@ console.log(compareArray(routineTwo, actionsPerformed));
 */
 
 function countRepsOfActionInRoutine(routine, action) {
+    let index =0;
     let count = 0;
-    // Your Code Here!
+    while (index < routine.length){
+        if (routine[index] == action) {
+            count ++
+        }
+        index ++;
+    }
     return count;
 }
 
@@ -197,7 +213,15 @@ console.log(countRepsOfActionInRoutine(routineThree, "crunch") == 0);
 */
 
 function removeExerciseFromRoutine(routine, exercise) {
-    // Your Code Here!
+    let index = 0;
+    while (index < routine.length) {
+        let currentExercise = routine[index]
+        if (currentExercise === exercise) {
+            routine.splice (index, 1) 
+        } else {
+            index ++;
+        }
+    }
 }
 
 
